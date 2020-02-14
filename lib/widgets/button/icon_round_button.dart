@@ -10,15 +10,25 @@ class IconRoundButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Ink(
-      decoration: ShapeDecoration(color: color, shape: CircleBorder()),
-      child: IconButton(
-          padding: EdgeInsets.all(6),
-          icon: Icon(
-            icon,
-            color: Colors.white,
-          ),
-          onPressed: onPressed),
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        padding: EdgeInsets.all(10),
+        decoration: ShapeDecoration(color: color, shape: CircleBorder()),
+        child: Column(
+          children: <Widget>[Icon(icon, color: Colors.white)],
+        ),
+      ),
     );
+    // return Ink(
+    //   decoration: ShapeDecoration(color: color, shape: CircleBorder()),
+    //   child: IconButton(
+    //       padding: EdgeInsets.all(6),
+    //       icon: Icon(
+    //         icon,
+    //         color: Colors.white,
+    //       ),
+    //       onPressed: onPressed),
+    // );
   }
 }
